@@ -17,8 +17,7 @@
         private VNCScreen.VNCScreen vnc;
         private Collider touchedCollider = null;
         private Renderer r;
-
-        public GameObject screen; 
+    
         public bool manageKeys;
 
         void Awake()
@@ -60,7 +59,7 @@
                 transform.position = hit_pos;
                 uvPos = hit.textureCoord2;
 
-                Debug.Log(uvPos);
+                //Debug.Log(uvPos);
                 vnc.UpdateMouse(uvPos, false, false, false);
             }
         }

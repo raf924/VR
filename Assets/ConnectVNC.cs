@@ -6,10 +6,14 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System;
+using VNCScreen;
 
 public class ConnectVNC : MonoBehaviour {
+    public GameObject screens;
     public InputField ipAdress;
     public InputField password;
+    
+
     #region private members 	
     private TcpClient socketConnection;
     private Thread clientReceiveThread;
@@ -21,11 +25,10 @@ public class ConnectVNC : MonoBehaviour {
     {
         try
         {
-            socketConnection = new TcpClient(ipAdress.text, 19000);
+            //socketConnection = new TcpClient(ipAdress.text, 19000);
+            socketConnection = new TcpClient("192.168.0.2", 19000);
             this.SendMessage();
-            clientReceiveThread = new Thread(new ThreadStart(ListenForData));
-            clientReceiveThread.IsBackground = true;
-            clientReceiveThread.Start();
+            this.ListenForData();
         }
         catch (Exception e)
         {
@@ -40,9 +43,9 @@ public class ConnectVNC : MonoBehaviour {
         try
         {
             Debug.Log(ipAdress.text);
-            socketConnection = new TcpClient(ipAdress.text, 19000);
             Byte[] bytes = new Byte[1024];
-            while (true)
+            bool byteReceived = true;
+            while (byteReceived)
             {
                 // Get a stream object for reading 				
                 using (NetworkStream stream = socketConnection.GetStream())
@@ -56,6 +59,18 @@ public class ConnectVNC : MonoBehaviour {
                         // Convert byte array to string message. 						
                         string serverMessage = Encoding.ASCII.GetString(incommingData);
                         Debug.Log("server message received as: " + serverMessage);
+                        GameObject newScreen = Instantiate(screens, Camera.main.transform.position + Camera.main.transform.forward, Camera.main.transform.rotation);
+                        GameObject ChildGameObject1 = newScreen.transform.GetChild(0).gameObject;
+                        VNCScreen.VNCScreen yourObject = ChildGameObject1.GetComponent<VNCScreen.VNCScreen>();
+                        //yourObject.password = password.text;
+                        yourObject.password = "holofaps";
+                        yourObject.port = 5900;
+                        //yourObject.host = ipAdress.text;
+                        yourObject.host = "192.168.0.2";
+                        yourObject.display = int.Parse(serverMessage);
+                        var holoMenu = GameObject.Find("HoloMenu");
+                        holoMenu.SetActive(false);
+                        byteReceived = false;
                     }
                 }
             }
