@@ -147,6 +147,7 @@ namespace UnityVncSharp.Encodings
 		{
 			byte[] b = reader.ReadBytes(12);
 
+            Debug.Log(b[10]);
 			// As of the time of writing, the only supported versions are 3.3, 3.7, and 3.8.
 			if (	b[0]  == 0x52 &&					// R
 					b[1]  == 0x46 &&					// F
@@ -171,6 +172,8 @@ namespace UnityVncSharp.Encodings
 				// If and when 4.x comes out, this will need to be fixed--however, the entire 
 				// protocol will need to be updated then anyway :)
 				verMajor = 3;
+
+                Debug.Log(b[10]);
 
 				// Figure out which version of the protocol this is:
 				switch (b[10]) {

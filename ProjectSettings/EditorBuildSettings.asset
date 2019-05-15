@@ -6,9 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/HoloToolkit-Examples/UX/Scenes/KeyboardTest.unity
+    guid: 3fb77ac039974de4c9946609c18cdae7
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 1ca638f5ebed9b449a69f71d73da772d
-  m_configObjects: {}

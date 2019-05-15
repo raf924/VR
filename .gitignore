@@ -3,5 +3,8 @@ App/
 Temp/
 Library/
 *.csproj
-
+Assets/HoloToolkit-Examples.meta
+Assets/HoloToolkit-Examples/
+.vs/
+UnityPackageManager/
 *.sln

@@ -26,6 +26,7 @@ using System.Threading;
 using UnityEngine;
 using VNCScreen.Drawing;
 using UnityVncSharp;
+using HoloToolkit.Unity.InputModule;
 
 namespace VNCScreen
 {
@@ -52,7 +53,7 @@ namespace VNCScreen
     /// 
     /// This code is mainly adapted from RemoteDesktop code from the VncSharp
     /// </summary>
-    public class VNCScreen : MonoBehaviour
+    public class VNCScreen : MonoBehaviour, IInputClickHandler, IInputHandler
     {
         public string host;
         public int port = 5900;
@@ -67,10 +68,11 @@ namespace VNCScreen
         public Size ScreenSize { get { return screenSize; } }
 
         public bool connectOnStartUp;
-        bool passwordPending = false;            // After Connect() is called, a password might be required.
+        bool passwordPending = true;            // After Connect() is called, a password might be required.
         bool fullScreenRefresh = false;		     // Whether or not to request the entire remote screen be sent.
 
         private Material m;
+        private Point mouse;
 
         Thread mainThread;
 
@@ -84,6 +86,22 @@ namespace VNCScreen
             {
                 Connect();
             }
+        }
+
+        public void OnInputClicked(InputClickedEventData eventData)
+        {
+            // AirTap code goes here
+            Debug.Log("I'm Topping Pizza");
+            Debug.Log(mouse);
+            this.UpdateMouse(mouse, true, false, false);
+        }
+
+        public void OnInputDown(InputEventData eventData)
+        {
+        }
+
+        public void OnInputUp(InputEventData eventData)
+        {
         }
 
         void setDisconnectedMaterial()
@@ -436,6 +454,7 @@ namespace VNCScreen
 
         public void UpdateMouse(Point pos, bool button0, bool button1, bool button2)
         {
+            mouse = pos;
             vnc.UpdateMouse(pos, button0, button1, button2);
         }
 
