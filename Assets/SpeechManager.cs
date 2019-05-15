@@ -27,9 +27,10 @@ public class SpeechManager : MonoBehaviour
         var rend = holoMenu.GetComponent<Renderer>();
         if (rend != null) rend.enabled = _visible;
 
-        holoMenu.transform.localScale = Vector3.one * 0.3f;
+        //holoMenu.transform.localScale = 3.0f;
         holoMenu.transform.position =
             Camera.main.transform.position + Camera.main.transform.forward;
+        holoMenu.transform.rotation = new Quaternion(0.0f, Camera.main.transform.rotation.y, 0.0f, Camera.main.transform.rotation.w);
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
