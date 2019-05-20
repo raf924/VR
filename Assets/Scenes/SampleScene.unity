@@ -146,7 +146,7 @@ MonoBehaviour:
   screens: {fileID: 1953036256044396, guid: 06c1071512c41cc45b29d75e4229cc8d, type: 2}
   ipAdress: {fileID: 1841230473}
   password: {fileID: 1404583892}
-  ignoreAutoGenerateVNC: 1
+  ignoreAutoGenerateVNC: 0
 --- !u!4 &32355934
 Transform:
   m_ObjectHideFlags: 0
