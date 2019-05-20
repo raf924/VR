@@ -90,9 +90,6 @@ namespace VNCScreen
 
         public void OnInputClicked(InputClickedEventData eventData)
         {
-            // AirTap code goes here
-            Debug.Log("I'm Topping Pizza");
-            Debug.Log(mouse);
             this.UpdateMouse(mouse, true, false, false);
         }
 
