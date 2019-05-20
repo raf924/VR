@@ -557,7 +557,7 @@ PlayerSettings:
     14: 
   platformArchitecture: {}
   scriptingBackend:
-    Metro: 2
+    Metro: 1
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
@@ -565,7 +565,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: test
-  metroPackageVersion: 1.0.9.0
+  metroPackageVersion: 1.0.12.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
@@ -596,14 +596,14 @@ PlayerSettings:
       HumanInterfaceDevice: False
       InputInjectionBrokered: False
       InternetClient: False
-      InternetClientServer: False
+      InternetClientServer: True
       Location: False
       Microphone: True
       MusicLibrary: False
       Objects3D: False
       PhoneCall: False
       PicturesLibrary: False
-      PrivateNetworkClientServer: False
+      PrivateNetworkClientServer: True
       Proximity: False
       RemovableStorage: False
       SharedUserCertificates: False

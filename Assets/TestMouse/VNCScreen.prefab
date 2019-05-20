@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 64672594049184158}
   - component: {fileID: 23880836862590694}
   - component: {fileID: 114995209741776988}
+  - component: {fileID: 114635854854526158}
+  - component: {fileID: 114076189201066514}
   m_Layer: 0
   m_Name: VNCScreen
   m_TagString: Untagged
@@ -625,6 +627,22 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114076189201066514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742357393661384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb034688bcf84b4bb52b3a3310868c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostTransform: {fileID: 0}
+  boundingBoxPrefab: {fileID: 0}
+  manipulationMode: 3
+  rotationConstraint: 0
+  enableOneHandMovement: 0
 --- !u!114 &114244371414375296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -688,6 +706,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: -50}
+--- !u!114 &114635854854526158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742357393661384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4768146f072b50149a922df192dfb58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flattenedAxis: 0
+  scaleHandleMaterial: {fileID: 2100000, guid: 4a9072a0d8623aa44abf31f02d209a09, type: 2}
+  rotateHandleMaterial: {fileID: 2100000, guid: 4a9072a0d8623aa44abf31f02d209a09,
+    type: 2}
+  interactingMaterial: {fileID: 2100000, guid: b614a09bc429623478e946d8170b15ae, type: 2}
+  scaleRate: 1
+  appBarHoverOffsetZ: 0.05
+  maxScale: 2
+  rotationType: 0
+  handMotionToRotate: 0
+  rotateAroundPivot: 0
+  boundingBoxPrefab: {fileID: 114030465538688920, guid: 865a8ded6c47efd4285f04f3aebe99e9,
+    type: 2}
+  appBarPrefab: {fileID: 114050950401502068, guid: aa610ada334bff640a535f0d23a9a15c,
+    type: 2}
 --- !u!114 &114995209741776988
 MonoBehaviour:
   m_ObjectHideFlags: 1

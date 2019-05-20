@@ -13,8 +13,7 @@ public class moveMenu : MonoBehaviour {
     {
         var holoMenu = GameObject.Find("HoloMenu");
         //holoMenu.transform.localScale = 3.0f;
-        holoMenu.transform.position =
-            Camera.main.transform.position + Camera.main.transform.forward;
+        holoMenu.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
         holoMenu.transform.rotation = new Quaternion(0.0f, Camera.main.transform.rotation.y, 0.0f, Camera.main.transform.rotation.w);
     }
 	
